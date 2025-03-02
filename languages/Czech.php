@@ -35,7 +35,7 @@ define("LAN_LOGINMENU_22", "nový člen");
 define("LAN_LOGINMENU_23", "nových členů");
 define("LAN_LOGINMENU_24", "Klepnutím sem zobrazíte seznam nových položek");
 define("LAN_LOGINMENU_25", "Od vaší poslední návštěvy přibudlo");
-define("LAN_LOGINMENU_26", "0");
+define("LAN_LOGINMENU_26", "");
 define("LAN_LOGINMENU_27", "a");
 define("LAN_LOGINMENU_31", "Zobrazit nové novinky");
 define("LAN_LOGINMENU_34", "Zobrazit nové komentáře");

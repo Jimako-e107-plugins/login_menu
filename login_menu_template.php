@@ -104,69 +104,6 @@ if ( ! isset($LOGIN_MENU_MESSAGE))
 if ( ! isset($LOGIN_MENU_LOGGED))
 {
 
-/*
-    NEW SHORTCODES and/or PARAMETERS:
-
-    $LOGIN_MENU_LOGGED
-    - LM_ADMIN_CONFIGURE (parm: 'href' or empty)
-    - LM_ADMINLINK (parm: 'href' or empty)
-    - LM_PROFILE_HREF
-    - LM_LOGOUT_HREF
-    - LM_USERSETTINGS_HREF
-    - LM_EXTERNAL_LINKS
-    - LM_STATS
-    - LM_LISTNEW_LINK
-
-    $LOGIN_MENU_EXTERNAL_LINK
-    - LM_EXTERNAL_LINK (parm: 'href' or empty)
-    - LM_EXTERNAL_LINK_LABEL
-
-    $LOGIN_MENU_STATS
-    - LM_NEW_NEWS
-    - LM_NEW_COMMENTS
-    - LM_NEW_USERS
-    - LM_PLUGIN_STATS
-
-    $LM_STATITEM_SEPARATOR - plugin stats separator
-
-    $LOGIN_MENU_STATITEM
-    - LM_STAT_NEW
-    - LM_STAT_LABEL
-    - LM_STAT_EMPTY
-
-    ---------------- Legacy Layout --------------------------------
- 
-   	$sc_style['LM_MAINTENANCE']['pre'] = '<div style="text-align:center"><strong>';
-	$sc_style['LM_MAINTENANCE']['post'] = '</strong></div><br />';
-
-    $sc_style['LM_ADMINLINK']['pre'] = '';
-	$sc_style['LM_ADMINLINK']['post'] = '<br />';
-
-    $sc_style['LM_EXTERNAL_LINKS']['pre'] = '<br />';
-	$sc_style['LM_EXTERNAL_LINKS']['post'] = '<br />';
-
-    $sc_style['LM_STATS']['pre'] = '<br /><br /><span class="smalltext">'.LOGIN_MENU_L25.':<br />';
-	$sc_style['LM_STATS']['post'] = '</span>';
-
-    $sc_style['LM_LISTNEW_LINK']['pre'] = '<br /><br />';
-	$sc_style['LM_LISTNEW_LINK']['post'] = '';
-
-    $sc_style['LM_ADMIN_CONFIGURE']['pre'] = '';
-	$sc_style['LM_ADMIN_CONFIGURE']['post'] = '<br />';
-
-	$LOGIN_MENU_LOGGED = '
-		{LM_MAINTENANCE}
-		{LM_ADMINLINK_BULLET} {LM_ADMINLINK}
-		{LM_BULLET} {LM_USERSETTINGS}<br />
-		{LM_BULLET}	{LM_PROFILE}<br />
-		{LM_ADMINLINK_BULLET} {LM_ADMIN_CONFIGURE}
-		{LM_EXTERNAL_LINKS}
-		{LM_BULLET} {LM_LOGOUT}
-		{LM_STATS}
-		{LM_LISTNEW_LINK}
-	';
-*/
-
 // New Template for v2. Bullets via CSS etc. Login-Menu Stats may require work. 
 
     $sc_style['LM_MAINTENANCE']['pre'] = '<li class="list-group-item login-menu-maintenance">';
@@ -178,8 +115,10 @@ if ( ! isset($LOGIN_MENU_LOGGED))
     $sc_style['LM_EXTERNAL_LINKS']['pre'] = '<li class="list-group-item login-menu-external">';
 	$sc_style['LM_EXTERNAL_LINKS']['post'] = '</li>';
 
-    $sc_style['LM_STATS']['pre'] = '<li class="list-group-item nav-header login-menu-stats smalltext">'.LAN_LOGINMENU_25.':</li><li>';
-	$sc_style['LM_STATS']['post'] = '</li>';
+//core    $sc_style['LM_STATS']['pre'] = '<li class="list-group-item nav-header login-menu-stats smalltext">'.LAN_LOGINMENU_25.':</li><li>';
+    $sc_style['LM_STATS']['pre'] = '<li class="list-group-item login-menu-stats smalltext">' . LAN_LOGINMENU_25 . ': <br> ';
+
+    $sc_style['LM_STATS']['post'] = '</li>';
 
     $sc_style['LM_LISTNEW_LINK']['pre'] = '<li class="list-group-item login-menu-listnew">';
 	$sc_style['LM_LISTNEW_LINK']['post'] = '</li>';
@@ -244,8 +183,9 @@ if ( ! isset($LOGIN_MENU_STATS))
 $LM_STATITEM_SEPARATOR = '<br />';
 if (!isset($LOGIN_MENU_STATITEM))
 {
+    //core   {LM_STAT_NEW} {LM_STAT_LABEL}{LM_STAT_EMPTY}
+    $LOGIN_MENU_STATITEM = '
+        - {LM_STAT_LABEL}{LM_STAT_EMPTY}: {LM_STAT_NEW} 
 
-	$LOGIN_MENU_STATITEM = '
-        {LM_STAT_NEW} {LM_STAT_LABEL}{LM_STAT_EMPTY}
     ';
 }
